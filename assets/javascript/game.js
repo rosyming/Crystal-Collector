@@ -1,61 +1,96 @@
-// Creating variables to hold wins, losses, total guesses
+// Creating global variables to hold wins, losses, total guesses
 var wins = 0;
 var losses = 0;
 var totalGuess = 0;
-var numberOptions = [1, 3, 10, 7];
+//var randomNum = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
+//    $('#current-num').text(randomNum);
+    
 
-// Generate Random Numbers
-var min = 19;
-var max = 120;
-var randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
 
 // Inserting numbers to DOM
-$('#current-num').text(randomNum);
 $('#numWins-text').text('Wins: ' + wins);
 $('#numLoss-text').text('Losses: ' + losses);
 $('#currentGuess-text').text('Current Guess: ' + totalGuess)
 
-for (var i = 0; i < numberOptions.length; i++) {
-    var crystalImg = $('<img>');
-    crystalImg.addClass('crystal-img');
-    crystalImg.attr('src', 'assets/images/Crystal_1.png');
-    crystalImg.attr('data-crystalValue', numberOptions[i]);
-    $('#crystals').append(crystalImg);
+// Create a game reset function
+
+function gameStart () {
+    randomNum = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
+    $('#current-num').text(randomNum);
+    console.log(randomNum);
+
+    var crystal1 = Math.floor(Math.random() * (12 - 1 + 1)) + 1;
+    $('#Crystal1').attr('crystalValue1', crystal1);
+
+    var crystal2 = Math.floor(Math.random() * (12 - 1 + 1)) + 1;
+    $('#Crystal2').attr('crystalValue2', crystal2);
+
+    var crystal3 = Math.floor(Math.random() * (12 - 1 + 1)) + 1;
+    $('#Crystal3').attr('crystalValue3', crystal3);
+
+    var crystal4 = Math.floor(Math.random() * (12 - 1 + 1)) + 1;
+    $('#Crystal4').attr('crystalValue4', crystal4);
+
+    totalGuess = 0;
+    $('#currentGuess-text').text('Current Guess: ' + totalGuess);
 }
 
-// Each crystal image gets a data attribute equal to array values
-
-crystalImg.attr('data-crystalValue', numberOptions[i]);
+gameStart ();
 
 //Apply click event to crystals
-$('.crystal-img').on('click', function() {
-    var crystalValue = ($(this).attr('data-crystalValue'));
-    crystalValue = parseInt(crystalValue);
-    totalGuess += crystalValue;
-    console.log(totalGuess);
+$('#Crystal1').on('click', function() {
+    var crystal1Value = ($(this).attr('crystalValue1'));
+    crystal1Value = parseInt(crystal1Value);
+    console.log(crystal1Value);
+    totalGuess += crystal1Value;
     $('#currentGuess-text').text('Current Guess: ' + totalGuess);
+})
+
+$('#Crystal2').on('click', function() {
+    var crystal2Value = ($(this).attr('crystalValue2'));
+    crystal2Value = parseInt(crystal2Value);
+    console.log(crystal2Value);
+    totalGuess += crystal2Value;
+    $('#currentGuess-text').text('Current Guess: ' + totalGuess);
+})
+
+$('#Crystal3').on('click', function() {
+    var crystal3Value = ($(this).attr('crystalValue3'));
+    crystal3Value = parseInt(crystal3Value);
+    console.log(crystal3Value);
+    totalGuess += crystal3Value;
+    $('#currentGuess-text').text('Current Guess: ' + totalGuess);
+})
+
+$('#Crystal4').on('click', function() {
+    var crystal4Value = ($(this).attr('crystalValue4'));
+    crystal4Value = parseInt(crystal4Value);
+    console.log(crystal4Value);
+    totalGuess += crystal4Value;
+    $('#currentGuess-text').text('Current Guess: ' + totalGuess);
+})
 
 
     if (totalGuess === randomNum) {
         wins++;
         $('#numWins-text').text('Wins: ' + wins);
-        totalGuess = 0;
-        $('#currentGuess-text').text('Current Guess: ' + totalGuess);   
     }
+    //    gameStart ();
+    //}
 
     else if (totalGuess >= randomNum) {
         losses++;
         $('#numLoss-text').text('Losses: ' + losses);
-        totalGuess = 0;    
-        $('#currentGuess-text').text('Current Guess: ' + totalGuess);    
+    }
+        //    gameStart ();
        
-   }
+
     
 
-}
 
-//Need to have different pictures load with attributes
+
+//Need to count wins and losses
 //Need to have random numbers reset when lose and win
-//Need to have crystals have different randomly generated numbers
-);
+
+
 
