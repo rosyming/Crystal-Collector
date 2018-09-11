@@ -1,0 +1,27 @@
+.jumbotron {
+    background: white;
+    padding-top: 25px;
+}
+
+.crystal-img {
+    float: center;
+    margin-right: 33px;
+    width: 200px;
+    height: auto;
+}
+
+h1 {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+h2 {
+    padding: 0px 0px 0px 0px;
+    margin-top: 0px;
+    margin-bottom: 25px;
+}
+
+.card {
+    height: 250px;
+    margin-bottom: 25px;
+}
