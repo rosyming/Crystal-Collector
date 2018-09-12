@@ -6,11 +6,17 @@ h1 {
 h2 {
     padding: 0px 0px 0px 0px;
     margin-top: 0px;
-    margin-bottom: 25px;
+    margin-bottom: 45px;
+    text-align: center;
+}
+
+p {
+    font-size: 20px;
+    text-align: center;
 }
 
 .card {
-    height: 250px;
+    height: 200px;
     margin-bottom: 25px;
 }
 
