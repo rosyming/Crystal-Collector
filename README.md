@@ -4,9 +4,13 @@ GATech Coding Bootcamp Homework: 4. JQuery Assignment
 This is the README file for the GATech Coding Bootcamp Homework: 4. JQuery Assignment.  
 
 Game Title: Crystals Collector!
+
 Website: https://rosyming.github.io/unit-4-game/
+
 GitHub Repository: https://github.com/rosyming/unit-4-game
+
 Last updated: 8/11/18
+
 Author: Mary Nguyen
 
 Technology stack: HTML, CSS, Bootstrap, JavaScript, JQuery
